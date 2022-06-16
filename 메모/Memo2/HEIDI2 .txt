@@ -1,0 +1,104 @@
+#날짜 : 2022/06/14
+#이름 : 김철학
+#내용 : 테이블 설정 실습
+
+create table `User2`(
+`uid` VARCHAR(10) PRIMARY KEY,
+`name` VARCHAR(10),
+`hp` CHAR(13) PRIMARY KEY,
+`age` tinyINT
+);
+
+
+create table `User3`(
+`uid` VARCHAR(10) PRIMARY KEY,
+`name` VARCHAR(10),
+`hp` CHAR(13) UNIQUE,
+`age` tinyINT
+);
+
+
+CREATE TABLE `PARENT`(
+`UID` VARCHAR(10) PRIMARY KEY,
+`NAME` VARCHAR(10),
+`HP` CHAR(13) UNIQUE
+);
+
+
+CREATE TABLE `user4`(
+`uid` VARCHAR(10) PRIMARY KEY,
+`name` VARCHAR(10),
+`hp` CHAR(13) UNIQUE,
+`pid` VARCHAR(10),
+FOREIGN KEY(`pid`)REFERENCES `parent`(`uid`)
+);
+
+
+
+INSERT INTO `user2` VALUES('a101', '김유신', '010-1234-1111', 25);
+INSERT INTO `user2` VALUES('a102', '김춘추', '010-1234-2222', 25);
+INSERT INTO `user2` VALUES('a103', '장보고', '010-1234-3333', 25);
+INSERT INTO `user2` VALUES('a104', '강감찬', '010-1234-4444', 25);
+INSERT INTO `user2` VALUES('a105', '이순신', '010-1234-5555', 25);
+INSERT INTO `user2` VALUES('a106', '정약용', '010-1234-3333', 25);
+
+
+INSERT INTO `user3` VALUES('a101', '김유신', '010-1234-1111', 25);
+INSERT INTO `user3` VALUES('a102', '김춘추', '010-1234-2222', 23);
+INSERT INTO `user3` VALUES('a103', '장보고', '010-1234-3333', 35);
+INSERT INTO `user3` VALUES('a104', '강감찬', '010-1234-4444', 77);
+INSERT INTO `user3` VALUES('a105', '이순신', '010-1234-5555', 88);
+
+
+INSERT INTO `PARENT` VALUES('p101', '김유신', '010-1234-1001');
+INSERT INTO `PARENT` VALUES('p102', '장보고', '010-1234-1002');
+INSERT INTO `PARENT` VALUES('p103', '이순신', '010-1234-1003');
+
+
+INSERT INTO `user4` VALUES('c101', '김철수', '010-1234-1111','p101');
+INSERT INTO `user4` VALUES('c102', '장철수', '010-1234-2222','p102');
+INSERT INTO `user4` VALUES('c103', '이철수', '010-1234-3333','p103');
+INSERT INTO `user4` VALUES('c104', '황철수', '010-1234-4444','p101');
+
+
+#실습하기 2-4  // 마땅히 PRIMARY 걸때가 없을떄 SEQ씀
+CREATE TABLE `user5`(
+`SEQ` INT AUTO_INCREMENT PRIMARY KEY,
+`name`  VARCHAR(10),
+`gender` TINYINT,
+`age` INT,
+`addr` VARCHAR(265) 
+);
+
+INSERT INTO `USER5` (`NAME`,`GENDER`,`AGE`,`ADDR`) VALUES('김유신',1, 25,'김해시');
+INSERT INTO `USER5` (`NAME`,`GENDER`,`AGE`,`ADDR`) VALUES('김춘추',2, 21,'경주시');
+INSERT INTO `USER5` (`NAME`,`GENDER`,`AGE`,`ADDR`) VALUES('선덕여왕',2, 35,'경주시');
+INSERT INTO `USER5` (`NAME`,`GENDER`,`AGE`,`ADDR`) VALUES('장보고',1, 31,'김해시');
+INSERT INTO `USER5` (`NAME`,`GENDER`,`AGE`,`ADDR`) VALUES('신사임당',2, 42,'강릉시');
+INSERT INTO `USER5` (`NAME`,`GENDER`,`AGE`,`ADDR`) VALUES('허난설헌',2, 27,'광주시');
+INSERT INTO `USER5` (`NAME`,`GENDER`) VALUES('허난설헌',2);
+
+#실습하기 2-5
+CREATE TABLE `user6`(
+`SEQ` INT AUTO_INCREMENT PRIMARY KEY,
+`name`  VARCHAR(10) NOT NULL,
+`gender` TINYINT,
+`age` INT DEFAULT 1,
+`addr` VARCHAR(265) 
+);
+
+INSERT INTO `USER6` (`NAME`,`GENDER`,`AGE`,`ADDR`) VALUES('김유신',1, 25,'김해시');
+INSERT INTO `USER6` (`NAME`,`GENDER`,`AGE`,`ADDR`) VALUES('김춘추',2, 21,'경주시');
+INSERT INTO `USER6` (`NAME`,`GENDER`,`AGE`,`ADDR`) VALUES('선덕여왕',2, 35,'경주시');
+INSERT INTO `USER6` (`NAME`,`GENDER`,`AGE`,`ADDR`) VALUES('장보고',1, 31,'김해시');
+INSERT INTO `USER6` (`NAME`,`GENDER`,`AGE`,`ADDR`) VALUES('신사임당',2, 42,'강릉시');
+INSERT INTO `USER6` (`NAME`,`GENDER`,`AGE`,`ADDR`) VALUES('허난설헌',2, 27,'광주시');
+INSERT INTO `USER6` (`NAME`,`GENDER`,`ADDR`) VALUES('왕성민',2,'부산시');
+
+
+#실습하기 2-6
+
+CREATE TABLE `USER6_COPY` LIKE `USER6`;
+INSERT INTO `USER6_COPY` SELECT * FROM `USER6`;
+
+#실습하기 2-7

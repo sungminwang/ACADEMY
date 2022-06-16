@@ -1,0 +1,17 @@
+객체지향 프로그래밍
+-캡슐화,상속,다형성
+
+
+ctrl + . 클래스 다른 스크립트에서 당겨오기
+
+물리적인 메모리 공간을 논리적인 Stack, Heap, Data 영역으로 나누어 사용하는것
+
+stack / heap -> garbage colletor  
+
+public / private / protected(상속쓸때 씀)
+
+get/set
+
+싱클톤객체(Singgleton)
+-싱클톤 객체는 하나의 인스턴스만을 갖도록 보장하는 객체이다.
+-싱글톤 객체를 활용해서 메모리 절약과 성능 향상을 기대할 수있다.

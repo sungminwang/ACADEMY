@@ -1,0 +1,67 @@
+Database
+mariaDB = MySQL과 비슷한 오픈소스
+MariaDB Server 10.6.8 다운로드
+
+
+HeidiSQL 접속클라이언트 프로그램
+
+
+MariaDB설치
+1234
+1234
+enable access from remote machines for 'Root' user  체크
+Use UTF9 as default server's character set 체크(영어아닌글자가안깨지게)
+
+(컴퓨터 바탕화면으로가서)
+CMD PROMPT MARIA DB
+mysql -u root -p      _________ mysql console 접속하는 방법
+1234
+
+show databases;
+
+CREATE DATABASE `TESTDB` ; 빽틱사용
+
+drop database `TESTDB`;
+
+show databases;
+
+use testdb;
+
+create table `User1`(
+`uid` VARCHAR(10),         /// VARCHAR의 (10)은 VARCHAR의 길이임.
+`name` VARCHAR(10),
+`hp` CHAR(13),
+`age` INT
+);
+
+show tables
+
+
+insert into `User1` VALUES('A101', '김유신', '010-1234-1111', 25);
+insert into `User1` VALUES('A102', '김춘추', '010-1234-2222', 23);
+insert into `User1` VALUES('A103', '장보고', '010-1234-3333', 32);
+insert into `User1` (`uid`, `name`, `age`) VALUES('A104', '강감찬', 45);
+insert into `User1` SET `uid`='A105', `name`='이순신', `hp`='010-1234-5555'; 
+
+select * from `user1`
+select * from `user` where `uid` ='A101';
+select * from `
+
+ctrl + c 나가기
+
+
+
+-----------------------------------
+HeidiSQL
+
+이름을 MariaDB
+암호 1234
+
+열기
+
+MARIAB\DB에서 만든 테이블 하이디 데이터 탭에 있음
+
+
+마우스오른쪽버튼 -> 선택실행 
+
+왼쪽 창에 F5 누르면 새로고침임

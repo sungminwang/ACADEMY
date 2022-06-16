@@ -1,0 +1,50 @@
+2022/06/02(목)
+
+0. Visual studio 설치할때 (.NET 데스크톱개발로 설치)
+
+1. 비쥬얼스튜디오에서 참조삭제
+도구>옵션>모든언어>codeLens>끄기
+
+
+2. F2 파일이름변경
+   F5 실행
+
+3. Const - 상수값으로 변경이 안됨(선언은 관례적으로 대문자)
+
+4. Code칠때 - Ctrl+D 한줄복사 / Ctrl+L 한줄삭제
+
+5. cw tab x 2    = Console.Writeline shortcut
+   svm tab x 2   = Static void Main(string[] args) shortcut
+
+2022/06/04(금)
+
+1. 솔루션선택 > 속성 > 시작프로젝트 > 현재 선택 영역
+
+2. 폴더>옵션>보기>숨김파일, 폴더 및 드라이브 표시 체크
+알려진 파일 형식의 파일 확장명 숨기기 체크해제
+
+3. git repository 삭제, 생성, 연결
+    git add Ch01/
+    git commit  -m '2022/06/02 수업예제'
+    git push 
+
+4. (git허브에서 내컴퓨터 폴더로 땡길때)
+   git fetch --all
+   git reset --hard origin/main
+
+5. visual studio>도구>환경>글꼴 및 색>Consolas 글꼴로 변경
+
+6. 중단점 찍고 F11번으로 한줄씩 내려가면서 디버깅
+
+7. 백준 온라인 
+
+8 git clone 쌤github주소
+
+
+2022/06/07
+
+1. 중단점 ->f11로 디버깅 한줄씩할 수 있다.
+
+2. 1차형배열 [ ]
+   2차형배열 [ , ]
+   3차형배열 [ ,, ]
